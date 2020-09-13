@@ -191,15 +191,21 @@ table {
     align-items: center;
 }
 .steps {
-    width: 111px;
     height: auto;
+    width: 137px;
     display: flex;
     align-items: inherit;
+}
+.active{
+    
+}
+.activeBl{
+    display: block;
 }
 .first_step_back {
     border-radius: 50%;
     width: 55px;
-    
+    opacity: 0.5;
     height: 55px;
     background-image: linear-gradient(-30deg, #7950ac 0%, #4577be 50%, #1ba8d7 100%);
     display: flex;
@@ -210,7 +216,9 @@ table {
     border-radius: 50%;
     width: 39px;
     display: flex;
+    position: relative;
     opacity: 1;
+    left: -46.5px;
     margin: auto;
     align-items: center;
     height: 39px;
@@ -221,16 +229,65 @@ table {
     display: flex;
     width: 43px;
     height: 15px;
+    left: -20px;
     color: #6a54b4;
+    position: relative;
     font-family: 'Rubik';
     font-size: 20px;
     text-transform: uppercase;
+
 }
 .step2_txt {
 }
+
+.singup {
+    width: 478px;
+    height: auto;
+    margin: auto;
+    display: block;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 40px;
+    background-image: linear-gradient(-30deg, #7950ac 0%, #4577be 50%, #1ba8d7 100%);
+}
+.inpt{
+    width: 368px;
+    height: 52px;
+    padding: 13px;
+    font-size: 16px;
+    border-radius: 3px;
+    border: 2px solid #dadada;
+    background-color: #ffffff;
+    margin: auto;
+    display: block;
+}
+.inpt:focus{
+    border: none;
+}
+.singup__inpt{
+    padding: 0 0 15px 0;
+}
+.singup__block {
+
+}
+.inpt_bl{
+    padding: 0 0 30px 0;
+}
+.singup__txt_block{
+    padding: 45px 0 35px 0;
+
+}
+.singup__txt {
+    color: #ffffff;
+    font-family: "Rubik";
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+}
+
 .calculator {
     width: 478px;
     height: auto;
+    display: none;
     margin: auto;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     border-radius: 40px;
@@ -370,11 +427,13 @@ table {
     border-bottom-left-radius: 50px;
     height: 990px;
     background-image: url(image/shutterstock_331742222-min.png), linear-gradient(-30deg, #7950ac 0%, #4577be 50%, #1ba8d7 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
 .best {
     margin: auto;
-    width: 1090px;
-    padding: 0 0 91px 0;
+    padding: 0 10% 91px 10%;
 }
 .best__text {
     display: flex;
@@ -465,9 +524,12 @@ table {
     height: 500px;
     border-bottom-left-radius: 50px;
     width: 90%;
-    float: right;
+    float: right;  
     background-image: url(image/Header_Startseite.png), linear-gradient(to top, #7950ac 0%, #4577be 50%, #1ba8d7 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
 .back_img_recoment {
 }
 .recoment_main {
@@ -517,7 +579,7 @@ table {
 .front_o {
     width: 10px;
     height: 10px;
-    left: -28.5px;
+    left: -63%;
     position: relative;
     border-radius: 50%;
     background-color: #ffffff;
@@ -700,6 +762,8 @@ table {
     float: left;
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .steps5_phone {
 
@@ -894,7 +958,7 @@ button:focus {outline: none;}
     justify-content: space-between;
     align-items: baseline;
 }
-.slid-item {
+.slid-item1 {
     
 }
 .slid-item-a {
@@ -1097,3 +1161,247 @@ button:focus {outline: none;}
     margin-bottom: 13px;
     text-align: center;
 }
+.stepa_block2 {
+    display: none;
+}
+
+@media screen and (max-width: 1600px) {
+    .img {
+        float: right;
+        display: flex;
+        width: 45%;
+        border-bottom-left-radius: 50px;
+        height: 990px;
+        background-image: url(image/shutterstock_331742222-min.png), linear-gradient(-30deg, #7950ac 0%, #4577be 50%, #1ba8d7 100%);
+    }
+    
+    .phone_img {
+        background: url(image/iPhone_Xs_Max12.png);
+        width: 400px;
+        border-radius: 50px;
+        border-bottom-left-radius: 24%;
+        height: 754px;
+        position: relative;
+        left: -16px;
+        display: flex;
+        background-repeat: no-repeat;
+    }
+  }
+  @media screen and (max-width: 1400px) {
+    .steps5_phone_img {
+        width: 411px;
+        height: 462px;
+        background: url(image/iPhone_Xs_Max.png);
+        /* margin-left: -7px; */
+    }
+    .secnd_step {
+        margin-left: 10px;
+    }
+  }
+  @media screen and (max-width: 1300px) {
+    .stepa_block2_top {
+        width: 328px;
+        margin: auto;
+    }
+    .stepa_block2_top_txt {
+        color: #ffffff;
+        font-family: "Rubik";
+        font-size: 27px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+    .steps5_phone_txt2_p {
+        color: #ffffff;
+        font-family: "Rubik";
+        font-size: 18px;
+        font-weight: 400;
+        margin-top: 30px;
+        line-height: 18px;
+        margin-bottom: 48px;
+    }
+    .steps5_numb_img2 {
+        width: 32px;
+        margin-top: 30px;
+        height: 320px;
+        display: inline-block;
+        background-image: url(image/11-layers.png);
+    }
+    .steps5_phone_txt2 {
+        display: inline-block;
+        margin-left: 10px;
+        width: 370px;
+        padding: 0 15% 0 0;
+    }
+    .stepa_block2_top_line {
+        width: 134px;
+        height: 3px;
+        background-color: #ffffff;
+        margin: auto;
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+    .stepa_block2_btm {
+        display: flex;
+    }
+    .steps5_phone_img2 {
+        width: 410px;
+        height: 462px;
+        background: url(image/iPhone_Xs_Max.png);
+        margin-left: -50px;
+    }
+    .secnd_step{
+        display: none;
+    }
+    .stepa_block{
+        display: none;
+    }
+    .stepa_block2 {
+        width: 800px;
+        height: auto;
+        display: block;
+        margin: auto;
+    }
+    .steps5_img_block {
+        height: auto;
+        background-image: url(image/55419076_m.png),linear-gradient(to top, #7950ac 0%, #4577be 50%, #1ba8d7 100%);
+        width: 90%;
+        float: left;
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+    }
+    .ffff {
+        width: 700px;
+        margin: auto;
+        display: flex;
+        margin-top: 39px;
+        position: relative;
+    }
+  }
+  @media screen and (max-width: 1120px) {
+    .why_block_img {
+            background-image: url(image/3-layers.png);
+        width: 358px;
+        height: 355px;
+        display: flex;
+        margin-top: 7%;
+    }
+    .why_blocks {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        width: 500px;
+        height: 540px;
+        align-content: space-between;
+    }
+    .sldr {
+        display: flex;
+        width: 650px;
+        margin: auto;
+        padding: 0;
+    }
+    
+  }
+  @media screen and (max-width: 1115px) {
+    .trebov_bloks {
+        justify-content: space-between;
+        align-items: baseline;
+        padding: 0 0 40px 0;
+        display: block;
+
+    }
+    .posl {
+        width: 800px;
+        margin: auto;
+    }
+    .treb_bl {
+        width: 800px;
+        height: auto;
+        background-color: #ffffff;
+        border-radius: 50px;
+        padding: 31px 35px 10px 35px;
+    }
+    .treb {
+        width: 800px;
+        margin: auto;
+    }
+    .ssd{
+        width: 800px;
+        margin: auto;
+    }
+    .terms_bl {
+        width: 800px;
+        height: 200px;
+        background-color: #ffffff;
+        border-radius: 50px;
+        padding: 31px 35px 30px 35px;
+    }
+  }
+  @media screen and (max-width: 1100px) {
+    .btn_navigation {
+        display: flex;
+        width: 260px;
+        top: -23px;
+        position: relative;
+        display: none;
+        height: 43px;
+        background: none;
+        justify-content: space-between;
+        align-items: baseline;
+        border-radius: 4px;
+        border: 1px solid #ffffff;
+    }
+    .arrow {
+        width: 74px;
+        margin: auto;
+        display: none;
+    }
+  }
+  @media screen and (max-width: 1110px) {
+    .last_wrap {
+        width: 100%;
+        margin: auto;
+        padding: 90px 0 0 0;
+    }
+    .gray_block_wrap {
+        width: 100%;
+        height: auto;
+        margin: auto;
+    }
+    .scnd {
+        width: 100%;
+        margin: auto;
+    }
+    .whu {
+        width: 100%;
+        margin: auto;
+        margin-bottom: 120px;
+        margin-top: 570px;
+    }
+    .offer {
+        width: 100%;
+        margin: auto;
+        padding: 80px 0 0 0;
+    }
+    .offer {
+        width: 100%;
+        margin: auto;
+        padding: 80px 0 0 0;
+    }
+    .last_wrap {
+        width: 100%;
+        margin: auto;
+        padding: 90px 0 0 0;
+    }
+  }
+  @media screen and (max-width: 1085px) {
+    .steps5_phone_img2 {
+        width: 410px;
+        height: 462px;
+        background: url(image/iPhone_Xs_Max.png);
+        margin-left: -140px;
+    }
+  }
+  
+  
+  

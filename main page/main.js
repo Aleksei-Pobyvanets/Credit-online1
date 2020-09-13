@@ -95,7 +95,7 @@ const slider = (function(){
 		
 		// Arrows function
 		function createArrows() {
-            var g = document.createElement('div')
+            const g = document.createElement('div')
 
 			const dValueLeftArrow = g ;
 			const dValueRightArrow = "M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z";
@@ -240,3 +240,64 @@ slider.init({
 	buttons: true,
 	dots: true
 });
+
+
+
+	let step1 = document.getElementById("step1")
+	let step2 = document.getElementById("step2")
+	let calculator = document.getElementById("calculator")
+	let singup = document.getElementById("singup")
+	console.log(step1, step2, calculator, singup)
+
+	step1.addEventListener("click", () => {
+		step1.classList.add("active")
+		step2.classList.remove("active")
+		calculator.classList.add("activeBl")
+		singup.classList.remove("activeBl")
+	})
+	step2.addEventListener("click", () => {
+		step2.classList.add("active")
+		step1.classList.remove("active")
+		calculator.classList.remove("activeBl")
+		singup.classList.add("activeBl")
+	})
+
+function doCalc(){
+	var value1  = parseInt(document.getElementById("credit1").value);
+	var value2  = parseInt(document.getElementById("credit2").value);
+	
+	var q1 = value1*0.01;
+	var q2 = value2*2;
+	var q4 = q1 + q2;
+	var q5	= q4 + value1;
+
+	document.getElementById("output").value = q5;
+}
+
+$(function() {
+	$(".btn-submit").on("click", validate);
+  
+	function validateEmail(email) {
+	  var re = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+	  return re.test(String(email).toLowerCase());
+	}
+	
+	function sendForm() {
+	  $(".error").text("Form sending").fadeIn();
+	}
+  
+	function validate() {
+	  var email = $(".email").val();
+	  var $error = $(".error");
+	  $error.text("");
+  
+	  if (validateEmail(email)) {
+		$error.fadeOut();
+		sendForm();
+	  } else {
+		$error.fadeIn();
+		$error.text(email + " is not valid");
+	  }
+	  return false;
+	}
+  });
