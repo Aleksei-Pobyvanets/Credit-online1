@@ -1,0 +1,119 @@
+.box {
+    max-width: 1140px;
+    height: auto;
+    border-radius: 3px;
+    border: 1px solid #dadada;
+    background-color: #ffffff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.box_logo_block {
+    width: 18%;
+}
+.box_logo_block_img {
+    width: 200px;
+    height: 79px;
+    background-color: skyblue;
+}
+.box_logo_stars_block {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 100%;
+    height: 40px;
+}
+.stars {
+    width: 125px;
+    height: 17px;
+    display: flex;
+    /* background-color: #f4d501; */
+}
+.star {
+    background-color: #f4d501;
+    font-size: 10px;
+    width: 10px;
+    margin-right: 3px;
+}
+.ball {
+}
+.main_part {
+    width: 70%;
+}
+.main_part_top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: auto;
+    width: 68%;
+}
+.main_part_top_summ {  
+    width: 130px;
+}
+.main_part_top_summ_txt {
+    color: #000000;
+    font-family: "Rubik";
+    font-size: 16px;
+    font-weight: 300;
+}
+.main_part_top_summ_bl{
+    display: flex;
+}
+.main_part_top_summ_numb {
+    display: flex;
+    width: 40px;
+}
+.main_part_top_summ_numb_grn {
+    display: flex;
+    width: 30px;
+}
+.main_part_top_prozents {
+}
+.main_part_top_prozents_txt {
+}
+.main_part_top_prozents_numb {
+}
+.main_part_top_prozents_numb_grn {
+}
+.main_part_top_back {
+}
+.main_part_top_back_txt {
+}
+.main_part_top_back_numb {
+}
+.main_part_top_back_numb_grn {
+}
+.main_part_line {
+    height: 1px;
+    background-color: #dadada;
+    margin: auto;
+    width: 90%;
+}
+.main_part_bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: auto;
+    width: 68%;
+}
+.main_part_bottom_summ {
+    width: 130px;
+}
+.main_part_bottom_summ_txt {
+}
+.main_part_bottom_summ_numb {
+}
+.last_block {
+}
+.last_block_proz_box {
+    display: flex;
+}
+.last_block_proz_txt {
+}
+.last_block_txt_box {
+}
+.last_block_txt {
+}
+.bnt {
+}

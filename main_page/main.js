@@ -1,30 +1,26 @@
-console.log("test")
-
 const slider = (function(){
 	
-	//const
-	const slider = document.getElementById("slider"); // основная обертка
-	const sliderContent = document.querySelector(".slider-content"); // обертка для контейнера слайдов и контролов
-	const sliderWrapper = document.querySelector(".slider-content-wrapper"); // контейнер для слайдов
-	const elements = document.querySelectorAll(".slider-content__item"); // обертка для слайда
-	const sliderContentControls = createHTMLElement("div", "slider-content__controls"); // блок контролов внутри sliderContent
-	let dotsWrapper = null; // Обертка dots
-	let prevButton = null; // Кнопки
+	const slider = document.getElementById("slider");
+	const sliderContent = document.querySelector(".slider-content"); 
+	const sliderWrapper = document.querySelector(".slider-content-wrapper"); 
+	const elements = document.querySelectorAll(".slider-content__item"); 
+	const sliderContentControls = createHTMLElement("div", "slider-content__controls"); 
+	let dotsWrapper = null; 
+	let prevButton = null; 
 	let nextButton = null;
 	let autoButton = null;
-	let leftArrow = null; // Стрелки
+	let leftArrow = null; 
 	let rightArrow = null;
-	let intervalId = null; //идентификатор setInterval
+	let intervalId = null;
 	
-	// data
 	const itemsInfo = {
-		offset: 0, // смещение контейнера со слайдами относительно начальной точки (первый слайд)
+		offset: 0,
 		position: {
-			current: 0, // номер текущего слайда
-			min: 0, // первый слайд
-			max: elements.length - 1 // последний слайд	
+			current: 0, 
+			min: 0, 
+			max: elements.length - 1 
 		},
-		intervalSpeed: 2000, // Скорость смены слайдов в авторежиме
+		intervalSpeed: 2000, 
 
 		update: function(value) {
 			this.position.current = value;
@@ -43,14 +39,11 @@ const slider = (function(){
 		nextButtonDisabled: false
 	};
 
-	// Инициализация слайдера
+	
 	function init(props) {
-		// let {buttonsEnabled, dotsEnabled} = controlsInfo;
 		let {intervalSpeed, position, offset} = itemsInfo;
 		
-		// Проверка наличия элементов разметки
 		if (slider && sliderContent && sliderWrapper && elements) {
-			// Проверка входных параметров
 			if (props && props.intervalSpeed) {
 				intervalSpeed = props.intervalSpeed;
 			}
@@ -70,30 +63,23 @@ const slider = (function(){
 			_updateControlsInfo();
 			_createControls(controlsInfo.dotsEnabled, controlsInfo.buttonsEnabled);
 			_render();	
-		} else {
-			console.log("Разметка слайдера задана неверно. Проверьте наличие всех необходимых классов 'slider/slider-content/slider-wrapper/slider-content__item'");
 		}
 	}
 
-	// Обновить свойства контролов
 	function _updateControlsInfo() {
 		const {current, min, max} = itemsInfo.position;
 		controlsInfo.prevButtonDisabled = current > min ? false : true;
 		controlsInfo.nextButtonDisabled = current < max ? false : true;
 	}
 
-	// Создание элементов разметки
 	function _createControls(dots = false, buttons = false) {
 		
-		//Обертка для контролов
 		sliderContent.append(sliderContentControls);
 
-		// Контролы
 		createArrows();
 		buttons ? createButtons() : null;
 		dots ? createDots() : null;
 		
-		// Arrows function
 		function createArrows() {
             const g = document.createElement('div')
 
@@ -112,19 +98,16 @@ const slider = (function(){
 
 			sliderContentControls.append(leftArrow, rightArrow);
 			
-			// SVG function
 			function createSVG(dValue, color="currentColor") {
 				const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
 				svg.setAttribute("viewBox", "0 0 256 512");
 				const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
 				path.setAttribute("fill", color);
-				path.setAttribute("d", dValue);
 				svg.appendChild(path);	
 				return "";
 			}
 		}
 
-		// Dots function
 		function createDots() {
 			dotsWrapper = createHTMLElement("div", "dots");			
 			for(let i = 0; i < itemsInfo.position.max + 1; i++) {
@@ -138,7 +121,6 @@ const slider = (function(){
 			sliderContentControls.append(dotsWrapper);	
 		}
 		
-		// Buttons function
 		function createButtons() {
 			const controlsWrapper = createHTMLElement("div", "slider-controls");
 			prevButton = createHTMLElement("button", "prev-control", "Prev");
@@ -159,31 +141,24 @@ const slider = (function(){
 			nextButton = createHTMLElement("button", "next-control", "Next");
 			nextButton.addEventListener("click", () => updateItemsInfo(itemsInfo.position.current + 1))
 
-			// controlsWrapper.append(prevButton, autoButton, nextButton);
-			// slider.append(controlsWrapper);
 		}
 	}
 
-	// Задать класс для контролов (buttons, arrows)
 	function setClass(options) {
 		if (options) {
 			options.forEach(({element, className, disabled}) => {
 				if (element) {
 					disabled ? element.classList.add(className) : element.classList.remove(className)	
-				} else {
-					console.log("Error: function setClass(): element = ", element);
-				}
+				} 
 			})
 		}
 	}
 
-	// Обновить значения слайдера
 	function updateItemsInfo(value) {
 		itemsInfo.update(value);
 		_slideItem(true);	
 	}
 
-	// Отобразить элементы
 	function _render() {
 		const {prevButtonDisabled, nextButtonDisabled} = controlsInfo;
 		let controlsArray = [
@@ -198,13 +173,10 @@ const slider = (function(){
 			];
 		}
 		
-		// Отображаем/скрываем контроллы
 		setClass(controlsArray);
 
-		// Передвигаем слайдер
 		sliderWrapper.style.transform = `translateX(${itemsInfo.offset*100}%)`;	
 		
-		// Задаем активный элемент для точек (dot)
 		if (controlsInfo.dotsEnabled) {
 			if (document.querySelector(".dot--active")) {
 				document.querySelector(".dot--active").classList.remove("dot--active");	
@@ -213,7 +185,6 @@ const slider = (function(){
 		}
 	}
 
-	// Переместить слайд
 	function _slideItem(autoMode = false) {
 		if (autoMode && intervalId) {
 			clearInterval(intervalId);
@@ -222,7 +193,6 @@ const slider = (function(){
 		_render();
 	}
 
-	// Создать HTML разметку для элемента
 	function createHTMLElement(tagName="div", className, innerHTML) {
 		const element = document.createElement(tagName);
 		className ? element.className = className : null;
@@ -230,12 +200,10 @@ const slider = (function(){
 		return element;
 	}
 
-	// Доступные методы
 	return {init};
 }())
 
 slider.init({
-	// intervalSpeed: 1000,
 	currentItem: 0,
 	buttons: true,
 	dots: true
@@ -245,59 +213,70 @@ slider.init({
 
 	let step1 = document.getElementById("step1")
 	let step2 = document.getElementById("step2")
+	let first_step_back_step1 = document.getElementById("first_step_back_step1")
+	let first_step_back_step2 = document.getElementById("first_step_back_step2")
+	let first_step_front1 = document.getElementById("first_step_front1")
+	let first_step_front2 = document.getElementById("first_step_front2")
+	let step1_txt1 = document.getElementById("step1_txt1")
+	let step1_txt2 = document.getElementById("step1_txt2")
 	let calculator = document.getElementById("calculator")
 	let singup = document.getElementById("singup")
 	console.log(step1, step2, calculator, singup)
 
 	step1.addEventListener("click", () => {
-		step1.classList.add("active")
-		step2.classList.remove("active")
-		calculator.classList.add("activeBl")
-		singup.classList.remove("activeBl")
+		first_step_back_step1.style.opacity = "0.5";
+		first_step_back_step1.style.background = "linear-gradient(-30deg, #7950ac 0%, #4577be 50%, #1ba8d7 100%)";
+		first_step_front1.style.background = "linear-gradient(-30deg, #7950ac 0%, #4577be 50%, #1ba8d7 100%)";
+		step1_txt1.style.color = "#6a54b4";
+		first_step_back_step2.style.background = "#828282";
+		first_step_back_step2.style.opacity = "0.3";
+		first_step_front2.style.background = "linear-gradient(-30deg, #a6a6a6 0%, #d6d6d6 100%)";
+		step1_txt2.style.color = "#b4b3b3";
+
+		calculator.style.display = "block";
+		singup.style.display = "none";
 	})
 	step2.addEventListener("click", () => {
-		step2.classList.add("active")
-		step1.classList.remove("active")
-		calculator.classList.remove("activeBl")
-		singup.classList.add("activeBl")
+		first_step_back_step2.style.opacity = "0.5";
+		first_step_back_step2.style.background = "linear-gradient(-30deg, #7950ac 0%, #4577be 50%, #1ba8d7 100%)";
+		first_step_front2.style.background = "linear-gradient(-30deg, #7950ac 0%, #4577be 50%, #1ba8d7 100%)";
+		step1_txt2.style.color = "#6a54b4";
+
+		first_step_back_step2.style.background = "linear-gradient(-30deg, #7950ac 0%, #4577be 50%, #1ba8d7 100%)";
+		first_step_back_step1.style.background = "#828282";
+		first_step_back_step1.style.opacity = "0.3";
+		first_step_front1.style.background = "linear-gradient(-30deg, #a6a6a6 0%, #d6d6d6 100%)";
+		step1_txt1.style.color = "#b4b3b3";
+
+		calculator.style.display = "none";
+		singup.style.display = "block";
 	})
 
-function doCalc(){
-	var value1  = parseInt(document.getElementById("credit1").value);
-	var value2  = parseInt(document.getElementById("credit2").value);
 	
-	var q1 = value1*0.01;
-	var q2 = value2*2;
-	var q4 = q1 + q2;
-	var q5	= q4 + value1;
+	 
 
-	document.getElementById("output").value = q5;
+let summ = document.getElementById("summ");
+let proz = document.getElementById("proz");
+let back = document.getElementById("back");
+let msumm = document.getElementById("msumm");
+let mtime = document.getElementById("mtime");
+
+function calc() {
+	let summSl = parseInt(document.getElementById("summSl").value);
+	let timeSl = parseInt(document.getElementById("timeSl").value);
+
+	let q1 = summSl*0.01;
+	let q2 = timeSl*2;
+	let q4 = q1 + q2;
+	let q5= q4 + summSl;
+	let q6 = q5 - summSl
+	summ.innerHTML = summSl
+	back.innerHTML = q5
+	proz.innerHTML = q6
+	msumm.innerHTML = summSl
+	mtime.innerHTML = timeSl
+	return console.log(q5) 	
 }
+calc()
 
-$(function() {
-	$(".btn-submit").on("click", validate);
-  
-	function validateEmail(email) {
-	  var re = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
-	  return re.test(String(email).toLowerCase());
-	}
-	
-	function sendForm() {
-	  $(".error").text("Form sending").fadeIn();
-	}
-  
-	function validate() {
-	  var email = $(".email").val();
-	  var $error = $(".error");
-	  $error.text("");
-  
-	  if (validateEmail(email)) {
-		$error.fadeOut();
-		sendForm();
-	  } else {
-		$error.fadeIn();
-		$error.text(email + " is not valid");
-	  }
-	  return false;
-	}
-  });
+
