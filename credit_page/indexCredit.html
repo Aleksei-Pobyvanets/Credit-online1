@@ -4,94 +4,339 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,900;1,300;1,400&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/1042277af0.js" crossorigin="anonymous"></script> 
     <title></title>
 </head>
-<body >
-    <div id="creditItems">
+<body>    
+    <div class="top">
+        <div class="image_bl">
+            <image class="image" />
+                <div class="navigation">
+                    <div class="navigation__elements"> 
+                        <div class="d">
+                            <div class="navigation__logo_name">
+                                <img src="image/logo.png" class="navigation__logo">
+                                <div class="navigation_main_text">
+                                    <p class="navigation_main_text1">CREDIT-ONLINE</p>
+                                    <p class="navigation_main_text2">Сервис онлайн-займов</p>
+                                </div>
+                            </div>
+                            <div class="nav_cart">
+                                <div class="nav_cart_img"></div>
+                            </div>
+                            <div class="arrowBtn">
+                                <div class="arrow">
+                                    <img class="back1" src="images/arrow.png">
+                                </div>
+                                <div class="btn_navigation">
+                                    <div class="ff">
+                                        <p class="btn_navigation_txt">Читать отзывы о нас</p>
+                                        <i class="fab fa-facebook-f faceb" aria-hidden="true"></i>
+                                    </div>                      
+                                </div> 
+                            </div> 
+                        </div>                                                
+                    </div>
+
+                    <div class="blockcCalc">
+                        <div class="blockcCalc_txt_bl">
+                            <h2 class="blockcCalc_h1">КРЕДИТ НА КАРТУ БЕЗ ОТКАЗА</h2>
+                            <p class="blockcCalc_txt">В любое время, в любом месте до <span style="opacity: 1;">15 000</span> грн прямо на Вашу карту</p>
+                        </div>
+                        <div class="calc_items">
+    
+                            <div class="calc_bl">
+                                <div class="calc_cum">
+                                    <div class="box_calc">
+                                        <div class="sum_numb">
+                                            <p class="sum_numb_txt">Сумма</p>
+                                            <p class="sum_numb_summ" id="msumm">7550</p>
+                                        </div>
+                                        <div class="uan">
+                                            <p class="uan_txt">UAN</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slaid">
+                                    <input type="range" id="summSl" onchange="calc()" step="50" class="slaiderInp" min="100" max="15000">
+                                    <div class="numb2">
+                                        <p class="calc_cum_numb1">100</p>
+                                        <p class="calc_cum_numb1">15 000</p>
+                                    </div>
+                                </div>
+                               
+                            </div>
+    
+    
+                            <div class="calc_bl">
+                                <div class="calc_cum">
         
-    </div>
-
-    <button id="btn" type="button">2</button>
-
-    <div>
-        1 credit hour: <input type="number" id="credit1"><br />
-        2 credit hour: <input type="number" id="credit2"><br />
-        Total: <input id="output"><br />
+                                    <div class="box_calc">
+                                        <div class="sum_numb">
+                                            <p class="sum_numb_txt">Срок</p>
+                                            <p class="sum_numb_summ" id="mtime">8</p>
+                                        </div>
+                                        <div class="uan">
+                                            <p class="uan_txt">МЕС</p>
+                                        </div>
+                                    </div>  
+                                </div>
+                                <div class="slaid">
+                                    <input type="range" id="timeSl" onchange="calc()" step="1" class="slaiderInp" min="3" max="12">
+                                    <div class="numb2">
+                                        <p class="calc_cum_numb2">3</p>
+                                        <p class="calc_cum_numb2">более 12</p>
+                                    </div>
+                                </div>
+                            </div>
     
-    
-            <button onclick="doCalc()" type="button">Calculate</button>
-    </div>
-    
-    <div class="box">
-        <div class="box_logo_block">
-            <div class="box_logo_block_img">logo</div>
-            <div class="box_logo_stars_block">
-                <div class="stars">
-                    <div class="star">*</div>
-                    <div class="star">*</div>
-                    <div class="star">*</div>
-                    <div class="star">*</div>
-                    <div class="star">*</div>
-                </div>
-                <p class="ball">(4.6)</p>
-            </div>
-        </div>
-
-        <div class="main_part">
-            <div class="main_part_top">
-                <div class="main_part_top_summ">
-                    <p class="main_part_top_summ_txt">Сумма кредита</p>
-                    <div class="main_part_top_summ_bl">
-                        <p class="main_part_top_summ_numb" id="">5000 </p>
-                        <p class="main_part_top_summ_numb_grn">грн</p>
+                            <div class="btn_accept">
+                                <div class="btn_accept_clr">
+                                    <p class="btn_accept_txt">заполнить заявку</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="main_part_top_summ">
-                    <p class="main_part_top_prozents_txt">Проценты</p>
-                    <div class="main_part_top_summ_bl">
-                        <p class="main_part_top_summ_numb" id="">5000 </p>
-                        <p class="main_part_top_summ_numb_grn">грн</p>
-                    </div>
-                </div>
-                <div class="main_part_top_summ">
-                    <p class="main_part_top_back_txt">Сумма кредита</p>
-                    <div class="main_part_top_summ_bl">
-                        <p class="main_part_top_summ_numb" id="">5000 </p>
-                        <p class="main_part_top_summ_numb_grn">грн</p>
-                    </div>
-                </div>
+        </div>            
+    </div>
+
+    <div class="items_bl1">
+        <div class="items_bl">
+            <div class="items_bl_txt_bl">
+                <img src="images/info.png" style="margin-right: 10px;" />
+                <p class="items_bl_txt"> На 31.07.2020 доступно 14 МФО, информация по условиям и ставкам указана в каталоге.</p>
             </div>
-                <div class="main_part_line"></div>
-            <div class="main_part_bottom">
-                <div class="main_part_bottom_summ">
-                    <p class="main_part_bottom_summ_txt">Первый кредит</p>
-                    <p class="main_part_bottom_summ_numb">500 - 7 000 грн</p>
-                </div>
-                <div class="main_part_bottom_summ">
-                    <p class="main_part_bottom_summ_txt">Повторный кредит</p>
-                    <p class="main_part_bottom_summ_numb">500 - 5 000 грн</p>
-                </div>
-                <div class="main_part_bottom_summ">
-                    <p class="main_part_bottom_summ_txt">Срок</p>
-                    <p class="main_part_bottom_summ_numb">2 - 30 дней</p>
-                </div>
-            </div>
+            
+        </div>
+    </div>
+    <div class="itms">
+        <div id="creditItems"> </div>
+    </div>
+    
+    <div class="recoment_img">
+        <div class="back_img_recoment"></div>
+        <div class="recoment_main">
+            <h1 class="recoment_maintxt">РЕКОМЕНДАЦИИ ДЛЯ ГАРАНТИРОВАННОГО ПОЛУЧЕНИЯ</h1>
+            <div class="line"></div>
         </div>
 
-        <div class="last_block">
-            <div class="last_block_proz_box">
-                <div class="last_block_proz_box">
-                    <p class="last_block_proz_txt">0,3%</p>
-                </div>
-                <div class="last_block_txt_box">
-                    <p class="last_block_txt">на первый кредит</p>
-                </div>
+        <div class="rec">
+            <div class="recoment__txt">
+               <div class="bl">
+                    <div class="back_o"></div>
+                    <div class="front_o"></div>
+                </div>                                          
+                <p class="recoment_maintxt_lil">Правильное заполнение увеличивает шанс получить кредит</p>
             </div>
-            <button class="bnt">получить кредит</button>
+            <div class="recoment__txt">
+                <div class="bl">
+                    <div class="back_o"></div>
+                    <div class="front_o"></div>
+                </div>  
+                <p class="recoment_maintxt_lil">Выбирайте из списка  наиболее выгодное предложение для вас</p>
+            </div>
+            <div class="recoment__txt">
+                <div class="bl">
+                    <div class="back_o"></div>
+                    <div class="front_o"></div>
+                </div>  
+                <p class="recoment_maintxt_lil">При оформлении первого кредита — 1000 грн на 105 дней, сумма к оплате составит 1005 грн.
+                    Мы прекращаем начисление процентов спустя 90 дней после просрочки по займу. Поэтому Вам
+                    в любом случае не придется возвращать в разы больше, чем Вы заняли.
+                </p>
+            </div>
+            <div class="time_rec">
+                <p class="time_rec1">СРОК — от 3 до 15 месяцев</p>
+                <p class="time_rec1">СУММА — до 15 000 грн</p>           
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="best">
+        <div class="best__text">
+            <h1 class="best__text-h1">ЛУЧШИЙ СПОСОБ ПОЛУЧИТЬ ДЕНЬГИ БЫСТРО</h1>
+        </div>
+        <div class="best__blocks">
+            <div class="best__blocks_miniblick">
+                <div class="best__back">
+                    <div class="best__back-img"></div>
+                </div>
+                <p class="best__blocks_miniblick-text">
+                    Заполните заявку<br>
+                        на кредит
+                </p>
+            </div>
+            <div class="back-arrow"></div>
+            <div class="best__blocks_miniblick">
+                <div class="best__back">
+                    <div class="best__back-img2"></div>
+                </div>
+                <p class="best__blocks_miniblick-text">
+                    Получите одобрение 
+                </p>
+            </div>       
+            <div class="back-arrow"></div>
+            <div class="best__blocks_miniblick">
+                <div class="best__back">
+                    <div class="best__back-img3"></div>
+                </div>
+                <p class="best__blocks_miniblick-text">
+                    Заберите деньги
+                </p>
+            </div>
         </div>
     </div>
 
+    <div class="gray_block">
+        <div class="gray_block_wrap">
+            <div class="trebov_bloks">
+                <div class="treb">
+                    <h1 class="treb_h1">Требования к заемщику</h1>
+                        <div class="treb_bl">
+                            <div class="treb_block">
+                                <div class="treb_lil_o"></div>
+                                <p class="treb_txt">
+                                    Кредитная история не учитывается при 
+                                    предоставлении займа.
+                                </p>
+                            </div>
+                            <div class="treb_block">
+                                <div class="treb_lil_o"></div>
+                                <p class="treb_txt">
+                                    Наличие гражданства Украины
+                                    (требуется паспорт гражданина).
+                                </p>
+                            </div>
+                            <div class="treb_block">
+                                <div class="treb_lil_o"></div>
+                                <p class="treb_txt">
+                                    Необходимо, чтобы заёмщику было как 
+                                    минимум 18 полных лет.
+                                </p>
+                            </div>
+                        </div>                     
+                </div>
 
+                                                                                                        
+                <div class="ssd">  
+                    <h1 class="treb_h1">Условия получения</h1>
+                    <div class="terms_bl">                                   
+                        <div class="terms" id="style-2">
+                        <div class="treb_block">
+                            <div class="treb_lil_o2"></div>
+                            <p class="treb_txt">
+                                Занимая повторно, необходимо выбрать денежную сумму и срок 
+                                выплаты.
+                            </p>
+                        </div>
+                        <div class="treb_block">
+                            <div class="treb_lil_o2"></div>
+                            <p class="treb_txt">
+                                Кредиторы предлагают разные периоды выплаты кредита со 
+                                скидкой - 100% на комиссионную плату, больше 
+                                информации на домашней странице каждого кредитора.
+                            </p>
+                        </div>
+                        <div class="treb_block">
+                            <div class="treb_lil_o2"></div>
+                            <p class="treb_txt">                                       
+                                Первый кредит возможен от 500 грн до 15000 грн.
+                            </p>
+                            
+                        </div>
+                        <div class="treb_block">
+                            <div class="treb_lil_o2"></div>
+                            <p class="treb_txt">
+                                Кредиторы предлагают разные периоды выплаты кредита со 
+                                скидкой - 100% на комиссионную плату, больше 
+                                информации на домашней странице каждого кредитора.
+                            </p>
+                        </div>
+                        <div class="treb_block">
+                            <div class="treb_lil_o2"></div>
+                            <p class="treb_txt">
+                                Кредиторы предлагают разные периоды выплаты кредита со 
+                                скидкой - 100% на комиссионную плату, больше 
+                                информации на домашней странице каждого кредитора.
+                            </p>
+                        </div>
+                        <div class="treb_block">
+                            <div class="treb_lil_o2"></div>
+                            <p class="treb_txt">
+                                Кредиторы предлагают разные периоды выплаты кредита со 
+                                скидкой - 100% на комиссионную плату, больше 
+                                информации на домашней странице каждого кредитора.
+                            </p>
+                        </div>
+                        <div class="treb_block">
+                            <div class="treb_lil_o2"></div>
+                            <p class="treb_txt">
+                                Кредиторы предлагают разные периоды выплаты кредита со 
+                                скидкой - 100% на комиссионную плату, больше 
+                                информации на домашней странице каждого кредитора.
+                            </p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+            </div> 
+            
+            <div class="posl">
+                <h1 class="treb_h1">Последствия при неуплате заемны средств</h1>
+                <div class="posl12">
+                    <div class="posl_bl" id="style-3">
+                        <p class="treb_txt">
+                            Если кредитор не уплачивает кредитной организации сумму кредита и проценты за использование кредита в оговоренный срок, кредитная организация начисляет неустойку за просрочку выплаты по кредиту.
+                            Обычно, кредитные организации предоставляют дополнительно 3 рабочих дня, чтобы кредитор смог внести очередной платеж, либо выплатить сумму кредита целиком, на случай непредвиденной задержки, связанной с безналичным переводом денежных средств. Если кредитная организация не получает оговоренный в договоре платеж в срок, она связывается с кредитором и напоминает о последствиях, наступающих при неуплате. Если длительное время не удается связаться с кредитором и платежи по кредиту не поступают, кредитная организация начислит денежный штраф, размер которого как правило равен 0,1% от суммы кредита, точный размер штрафов за просрочку необходимо уточнять при подписании договора на оказание кредитных услуг.
+                            Если кредитор не уплачивает кредитной организации сумму кредита и проценты за использование кредита в оговоренный срок, кредитная организация начисляет неустойку за просрочку выплаты по кредиту.
+                            Обычно, кредитные организации предоставляют дополнительно 3 рабочих дня, чтобы кредитор смог внести очередной платеж, либо выплатить сумму кредита целиком, на случай непредвиденной задержки, связанной с безналичным переводом денежных средств. Если кредитная организация не получает оговоренный в договоре платеж в срок, она связывается с кредитором и напоминает о последствиях, наступающих при неуплате. Если длительное время не удается связаться с кредитором и платежи по кредиту не поступают, кредитная организация начислит денежный штраф, размер которого как правило равен 0,1% от суммы кредита, точный размер штрафов за просрочку необходимо уточнять при подписании договора на оказание кредитных услуг.
+                            О сроках внесения платежей можно узнать при подписании договора на оказание кредитных услуг в каждой конкретной организации. В случае погашения кредита в срок (или раньше срока, если это предусмотрено договором), Вы формируете себе положительную кредитную история, которая поможет Вам в дальнейшем при получении кредитов на более крупные суммы. Сайт не оказывает финансовых услуг и не взымает денежные средства за предоставленную информацию.
+                            О сроках внесения платежей можно узнать при подписании договора на оказание кредитных услуг в каждой конкретной организации. В случае погашения кредита в срок (или раньше срока, если это предусмотрено договором), Вы формируете себе положительную кредитную история, которая поможет Вам в дальнейшем при получении кредитов на более крупные суммы. Сайт не оказывает финансовых услуг и не взымает денежные средства за предоставленную информацию.
+                            Если кредитор не уплачивает кредитной организации сумму кредита и проценты за использование кредита в оговоренный срок, кредитная организация начисляет неустойку за просрочку выплаты по кредиту.
+                            Обычно, кредитные организации предоставляют дополнительно 3 рабочих дня, чтобы кредитор смог внести очередной платеж, либо выплатить сумму кредита целиком, на случай непредвиденной задержки, связанной с безналичным переводом денежных средств. Если кредитная организация не получает оговоренный в договоре платеж в срок, она связывается с кредитором и напоминает о последствиях, наступающих при неуплате. Если длительное время не удается связаться с кредитором и платежи по кредиту не поступают, кредитная организация начислит денежный штраф, размер которого как правило равен 0,1% от суммы кредита, точный размер штрафов за просрочку необходимо уточнять при подписании договора на оказание кредитных услуг.
+                            Если кредитор не уплачивает кредитной организации сумму кредита и проценты за использование кредита в оговоренный срок, кредитная организация начисляет неустойку за просрочку выплаты по кредиту.
+                            Обычно, кредитные организации предоставляют дополнительно 3 рабочих дня, чтобы кредитор смог внести очередной платеж, либо выплатить сумму кредита целиком, на случай непредвиденной задержки, связанной с безналичным переводом денежных средств. Если кредитная организация не получает оговоренный в договоре платеж в срок, она связывается с кредитором и напоминает о последствиях, наступающих при неуплате. Если длительное время не удается связаться с кредитором и платежи по кредиту не поступают, кредитная организация начислит денежный штраф, размер которого как правило равен 0,1% от суммы кредита, точный размер штрафов за просрочку необходимо уточнять при подписании договора на оказание кредитных услуг.
+                            О сроках внесения платежей можно узнать при подписании договора на оказание кредитных услуг в каждой конкретной организации. В случае погашения кредита в срок (или раньше срока, если это предусмотрено договором), Вы формируете себе положительную кредитную история, которая поможет Вам в дальнейшем при получении кредитов на более крупные суммы. Сайт не оказывает финансовых услуг и не взымает денежные средства за предоставленную информацию.
+                            О сроках внесения платежей можно узнать при подписании договора на оказание кредитных услуг в каждой конкретной организации. В случае погашения кредита в срок (или раньше срока, если это предусмотрено договором), Вы формируете себе положительную кредитную история, которая поможет Вам в дальнейшем при получении кредитов на более крупные суммы. Сайт не оказывает финансовых услуг и не взымает денежные средства за предоставленную информацию.
+                        </p>
+                    </div>
+                </div>
+                    
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="last">
+        <div class="last_wrap">
+            <div class="navigation__logo_name_bl">
+                <div class="navigation__logo_name">
+                    <img src="images/Векторный_смарт-объект.png" class="navigation__logo">
+                    <div class="navigation_main_text">
+                        <p class="navigation_main_text1">CREDIT-ONLINE</p>
+                        <p class="navigation_main_text2">Сервис онлайн-займов</p>
+                    </div>
+                </div>
+            </div>
+            <div class="btn_navigation_bl1">
+                <div class="btn_navigation1">
+                    <div class="ff">
+                        <p class="btn_navigation_txt">Читать отзывы о нас</p>
+                        <i class="fab fa-facebook-f faceb" aria-hidden="true"></i>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+            <div class="line_last"></div>
+            <p class="last_txt">Политика конфиденциальности | Все права защищены © 2019</p>
+    </div>
+    
     <script src="credit.js"></script>
 
 </body>
