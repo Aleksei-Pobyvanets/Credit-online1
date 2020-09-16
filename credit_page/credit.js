@@ -183,10 +183,9 @@ const mockData = [
 	}
 ]
 
+
 function renderTemplaite(props) {
-	console.log(props)
 	const {data, summCredit ,time } = props
-	console.log(summCredit)
 
 	const price = summCredit ? summCredit : data.summCredit
 	const month = time ? time : data.time
@@ -194,7 +193,6 @@ function renderTemplaite(props) {
 	const SummAmmount = (price*data.percent) + (month*2) + price;
 	const persentCalculate = (price*data.percent) + (month*2) 
 
-	console.log(typeof price,price ,"price")
 	
 	
 
@@ -209,7 +207,7 @@ function renderTemplaite(props) {
 		<div class="box">
 		<div class="box_logo_block">
 			<div class="box_logo_block_img">
-				<img src="${data.logo}" />
+				<img src="${data.logo}" class='img_bl_box' />
 			</div>
 			<div class="box_logo_stars_block">
 				<div class="stars">
@@ -276,7 +274,7 @@ function renderTemplaite(props) {
 		<div class="last_block">
 			<div class="last_block_proz">
 				<div class="last_block_proz_box">
-					<p class="last_block_proz_txt">${data.percent}</p>
+					<p class="last_block_proz_txt">${data.percent}%</p>
 				</div>
 				<div class="last_block_txt_box">
 					<p class="last_block_txt">на первый кредит</p>
@@ -287,36 +285,129 @@ function renderTemplaite(props) {
 			</div>
 		</div>
 	</div>
+
+	<div class="box44">
+    
+    <div class="box3">
+        <div class="box_logo_block1">
+            <div class="box_logo_block_img">
+                <img src="${data.logo}" class='img_bl_box' />
+            </div>
+            <div class="box_logo_stars_block1">
+                <div class="stars">
+                    <div class="star">
+                        <i class="far fa-star" style=' font-size: 16px'></i>
+                    </div>
+                    <div class="star">
+                    <i class="far fa-star" style=' font-size: 16px'></i>
+                    </div>
+                    <div class="star">
+                    <i class="far fa-star" style=' font-size: 16px'></i>
+                    </div>
+                    <div class="star">
+                    <i class="far fa-star" style=' font-size: 16px'></i>
+                    </div>
+                    <div class="star">
+                    <i class="far fa-star" style=' font-size: 16px'></i>
+                    </div>
+                </div>
+                <p class="ball">(${data.reiting})</p>
+            </div>
+        </div>
+        <div class="last_block_proz">
+            <div class="last_block_proz_box">
+                <p class="last_block_proz_txt">${data.percent}%</p>
+            </div>
+            <div class="last_block_txt_box1">
+                <p class="last_block_txt">на первый кредит</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="main_part1">
+        <div class="main_part_top">
+            <div class="main_part_top_summ">
+                <p class="main_part_top_summ_txt">Сумма кредита</p>
+                <div class="main_part_top_summ_bl">
+                    <p class="main_part_top_summ_numb" id="">${price} <p class="main_part_top_summ_numb_grn">грн</p></p>
+                </div>
+            </div>
+            <div class="main_part_top_summ">
+                <p class="main_part_top_prozents_txt">Проценты</p>
+                <div class="main_part_top_summ_bl2">
+                    <p class="main_part_top_summ_numb" id=""> ${persentCalculate}</p>
+                    <p class="main_part_top_summ_numb_grn">грн</p>
+                </div>
+            </div>
+            <div class="main_part_top_summ">
+                <p class="main_part_top_back_txt">Сумма кредита</p>
+                <div class="main_part_top_summ_bl3">
+                    <p class="main_part_top_summ_numb" id="">${SummAmmount}</p>
+                    <p class="main_part_top_summ_numb_grn">грн</p>
+                </div>
+            </div>
+        </div>
+            <div class="main_part_line"></div>
+        <div class="main_part_bottom1">
+            <div class="main_part_bottom_summ1">
+                <p class="main_part_bottom_summ_txt">Первый кредит</p>
+                <p class="main_part_bottom_summ_numb1">${data.firstCr}</p>
+            </div>
+            <div class="main_part_bottom_summ1">
+                <p class="main_part_bottom_summ_txt">Повторный кредит</p>
+                <p class="main_part_bottom_summ_numb1">${data.scndCr}</p>
+            </div>
+            <div class="main_part_bottom_summ1">
+                <p class="main_part_bottom_summ_txt">Срок</p>
+                <p class="main_part_bottom_summ_numb1">${data.srok}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="last_block1">
+        
+        <div class="bnt">
+            <p class='bnt_txt'>получить кредит</p>
+        </div>
+    </div>
+</div>
+
 </div>  
 	`;
   }
 	const summCredit = document.getElementById("summSl");
 	const time =document.getElementById("timeSl");
+	const msumm = document.getElementById("msumm")
+	const mtime = document.getElementById("mtime")
+	
 
 	summCredit.addEventListener("change", (e) => {
 		const s = parseInt( e.target.value )
 		const t = parseInt( time.value )
 		renderCreditItems({data : mockData, summCredit: s, time: t})
-		console.log(typeof e.target.value)
 	})
 	time.addEventListener("change", (e) => {
 		const t = parseInt( e.target.value )
 		const s = parseInt( summCredit.value )
 		renderCreditItems({data : mockData, time: t , summCredit: s })
-		console.log(typeof e.target.value)
 	})
 
+	function calc(){
+		const SC = parseInt(document.getElementById("summSl").value);
+		const TM = parseInt(document.getElementById("timeSl").value);
+		msumm.innerHTML = SC;
+		mtime.innerHTML = TM;
+	}
 	
 	
 function renderCreditItems(props) {
 	const { data, summCredit ,time } = props
-	console.log(props)
 	if(data.length === 0) return false
 	const creditItems = document.getElementById('creditItems')
 	const templeit = data.map(element => {
 	return renderTemplaite({data: element, summCredit:summCredit, time:time })
 	}).join("")	
-	console.log(typeof creditItems)
 	creditItems.innerHTML = templeit
 }
 renderCreditItems({data : mockData});
