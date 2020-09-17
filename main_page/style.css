@@ -2474,6 +2474,63 @@ button:focus {outline: none;}
         margin: auto;
         text-align: center;
     }
+    .img {
+        float: right;
+        display: flex;
+        width: 95%;
+        position: relative;
+        top: 78px;
+        border-bottom-left-radius: 50px;
+        height: 820px;
+        border-top-left-radius: 50px;
+        background-image: url(image/shutterstock_331742222-min.png), linear-gradient(-30deg, #7950ac 0%, #4577be 50%, #1ba8d7 100%);
+    }
+    .second__text_lil_time {
+        font-size: 14px;
+        color: #fff;
+        font-family: "Rubik";
+        opacity: 0.8;
+        text-align: center;
+    }
+    .credit_cost_numb {
+        color: #FFF;
+        font-family: "Rubik";
+        font-size: 17px;
+        font-weight: 500;
+    }
+    .credit_cost_txt {
+        font-family: "Rubik";
+        color: #fff;
+        font-size: 14px;
+        font-weight: 400;
+        align-items: baseline;
+        line-height: 30px;
+    }
+    .second__text {
+        width: 100%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        padding: 30px 0% 30px 0%;
+    }
+    .steps1-2 {
+        width: 80%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0 10px 0;
+    }
+    .best {
+        margin: auto;
+        padding: 940px 10% 91px 10%;
+        display: block;
+    }
+    .navigation__logo_name {
+        width: 202px;
+        display: flex;
+        align-items: center;
+        margin: auto;
+    }
   }
 
 .calc_bl{
@@ -2483,8 +2540,30 @@ button:focus {outline: none;}
 .slaid {
     display: block;
     margin: auto;
-    width: 80%;
+    width: 82%;
 }
 .slaiderInp{
     width: 98%;
+    height: 6px;
+    -webkit-appearance: none;
+    -webkit-transition: 0.2s;
+    transition: opasity 0.2s;
+    background: linear-gradient(90deg, rgb(251, 51, 139) 0%, rgb(251, 51, 139) 60%);
+    outline: none;
+    border-radius: 50px;
+}
+.slaiderInp::-webkit-slaiderInp-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #fb338b;
+}
+.slaiderInp::-moz-range-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #fb338b;
 }

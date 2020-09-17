@@ -48,7 +48,6 @@
                         <p class="second__text_lil_time">
                             В любое время, в любом месте <br>
                             до 15 000 грн прямо на Вашу карту
-                            <!-- <p style="color: #6958ad;">15 000</p> -->
                         </p>
                     </div>
                 
@@ -70,9 +69,9 @@
                     </div>
                 </div>
                     
-                <div class="calculator activeBl" id="calculator">
+                <div class="calculator activeBl"  id="calculator">
                     <div class="calculator_main_txt">
-                        <p class="calculator_main_txt-p">
+                            <p class="calculator_main_txt-p">
                             Выберите нужную сумму<br>
                             и срок кредита
                         </p>
@@ -142,14 +141,14 @@
                     </div>
     
                     <div class="btn_accept">
-                        <div class="btn_accept_clr">
+                        <button class="btn_accept_clr" type="button" id="step2Btn">
                             <p class="btn_accept_txt">заполнить заявку</p>
-                        </div>
+                        </button>
                     </div>
                 </div>
 
                 <div class="singup" id="singup">
-                    <div class="singup__block">
+                    <form class="singup__block" id="formReg" action="./send.php">
                         <div class="singup__txt_block">
                             <p class="singup__txt">
                                 Оформите заявку прямо сейчас
@@ -167,19 +166,20 @@
 
                             </div>
                             <div class="singup__inpt">
-                                <input type="email" id="email" placeholder="Введите ваш email" class="inpt">
+                                <input type="email" id="email" placeholder="Введите ваш email" onchange="ValidateEmail()" class="inpt">
 
                             </div>
                             <div class="singup__inpt">
-                                <input type="tel" id="tel" value="+380"  class="inpt">
+                                    <input type="number" id="tel" placeholder="Введите ваш телефон" onchange="phone()" class="inpt">
                             </div>
-                        </div>                                                  
+                        </div> 
+                        <div id="status"></div>                                                 
                         <div class="btn_accept">
-                            <div class="btn_accept_clr">
+                            <button class="btn_accept_clr">
                                 <p class="btn_accept_txt">получить кредит</p>
-                            </div>
+                            </button>
                         </div>
-                    </div>
+                    </form>
                 </div>
 
                 </div>   

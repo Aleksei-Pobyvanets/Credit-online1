@@ -209,10 +209,41 @@ slider.init({
 	dots: true
 });
 
+	formReg = document.getElementById("formReg")
 
+	formReg.addEventListener('submit', (e) => {
+		e.preventDefault();
+		var hr = new XMLHttpRequest();
+		// Create some variables we need to send to our PHP file
+		var url = "/send.php";
+		var fn = document.getElementById("FirstName").value;
+		var ln = document.getElementById("SecondName").value;
+		var em = document.getElementById("email").value;
+		var ph = document.getElementById("tel").value;
+		var vars = "FirstName="+fn+"&SecondName="+ln+"&email="+em+"&tel="+ph;
+		hr.open("POST", url, true);
+		// hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		// // Access the onreadystatechange event for the XMLHttpRequest object
+		// hr.onreadystatechange = function() {
+		// 	console.log(hr);
 
+		// 	if(hr.readyState == 4 && hr.status == 200) {
+		// 		var return_data = hr.responseText;
+		// 		document.getElementById("status").innerHTML = return_data;
+		// 	}
+		// }
+		// Send the data to PHP now... and wait for response to update the status div
+		hr.send(vars); // Actually execute the request
+		document.getElementById("status").innerHTML = "processing...";
+
+	})
+
+	
+	let email = document.getElementById("email")
+	let tel = document.getElementById("tel")
 	let step1 = document.getElementById("step1")
 	let step2 = document.getElementById("step2")
+	let step2Btn = document.getElementById("step2Btn")
 	let first_step_back_step1 = document.getElementById("first_step_back_step1")
 	let first_step_back_step2 = document.getElementById("first_step_back_step2")
 	let first_step_front1 = document.getElementById("first_step_front1")
@@ -222,6 +253,49 @@ slider.init({
 	let calculator = document.getElementById("calculator")
 	let singup = document.getElementById("singup")
 	console.log(step1, step2, calculator, singup)
+
+	let summSl11 =document.getElementById("summSl")
+	summSl11.addEventListener("mousemove", function sl() {
+		let x = summSl11.value
+		let color = 'linear-gradient(90deg,  rgb(251, 51, 139)' + x + '%,  rgb(251, 51, 139)'+ x +'%)';
+		summSl11.style.background = color;
+	})	
+
+	function ValidateEmail() {
+	if (/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email.value)){
+		return email.style.border = "none", console.log(1)
+		}else{
+			return email.style.border = "2px solid #FF0000";
+		}
+	}
+	function phone() {
+		let phoneno1 = /^\+?3?8?(0(67|68|96|97|98)\d{7})$/;
+		let phoneno2 = /^\+?3?8?(0[679]3\d{7})$/;
+		let phoneno3= /^\+?3?8?(0(66|95|99)\d{7})$/;
+		let phoneno4 = /^\+?3?8?(0[5-9][0-9]\d{7})$/;
+		let phoneno5 = /^\+?3?8?(0[3-6][1-8]\d{7})$/;
+		let phoneno6 = /^\+?3?8?(0\d{9})$/;
+	if(tel.value.match(phoneno1)){
+		return tel.style.border = "none"
+	}else if(tel.value.match(phoneno2)){
+		return tel.style.border = "none"
+	}
+	else if(tel.value.match(phoneno3)){
+		return tel.style.border = "none"
+	}
+	else if(tel.value.match(phoneno4)){
+		return tel.style.border = "none"
+	}
+	else if(tel.value.match(phoneno5)){
+		return tel.style.border = "none"
+	}
+	else if(tel.value.match(phoneno6)){
+		return tel.style.border = "none"
+	}else{
+		tel.style.border = "2px solid #FF0000";
+	}
+	  
+	}		
 
 	step1.addEventListener("click", () => {
 		first_step_back_step1.style.opacity = "0.5";
@@ -235,6 +309,21 @@ slider.init({
 
 		calculator.style.display = "block";
 		singup.style.display = "none";
+	})
+	step2Btn.addEventListener("click", ()=> {
+		first_step_back_step2.style.opacity = "0.5";
+		first_step_back_step2.style.background = "linear-gradient(-30deg, #7950ac 0%, #4577be 50%, #1ba8d7 100%)";
+		first_step_front2.style.background = "linear-gradient(-30deg, #7950ac 0%, #4577be 50%, #1ba8d7 100%)";
+		step1_txt2.style.color = "#6a54b4";
+
+		first_step_back_step2.style.background = "linear-gradient(-30deg, #7950ac 0%, #4577be 50%, #1ba8d7 100%)";
+		first_step_back_step1.style.background = "#828282";
+		first_step_back_step1.style.opacity = "0.3";
+		first_step_front1.style.background = "linear-gradient(-30deg, #a6a6a6 0%, #d6d6d6 100%)";
+		step1_txt1.style.color = "#b4b3b3";
+
+		calculator.style.display = "none";
+		singup.style.display = "block";
 	})
 	step2.addEventListener("click", () => {
 		first_step_back_step2.style.opacity = "0.5";

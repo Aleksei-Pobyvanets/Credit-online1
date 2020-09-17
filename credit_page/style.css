@@ -186,6 +186,7 @@ table {
     display: flex;
     justify-content: space-between;
     padding: 5% 0 0 0;
+    max-width: 1440px;
 }
 .btn_accept_clr {
     cursor: pointer;
@@ -329,6 +330,12 @@ table {
     width: 100%;
 }
 .stars1 {
+    width: 200px;
+    height: 17px;
+    display: flex;
+    margin-right: 15px;
+}
+.stars {
     width: 200px;
     height: 17px;
     display: flex;
@@ -1528,4 +1535,99 @@ table {
         background-repeat: no-repeat;
         background-size: cover;
     }
+  }
+  @media screen and (max-width: 400px) {
+    .calc_cum {
+        width: 250px;
+        display: flex;
+        height: 40px;
+        margin: auto;
+        background-color: #ffffff;
+        margin-bottom: 0px;
+        padding: 0 10px 10px 10px;
+    }
+    .slaid {
+        display: block;
+        margin: auto;
+        width: 270px;
+    }
+    .box44 {
+        width: 280px;
+        margin: auto;
+        border-radius: 3px;
+        border: 1px solid #dadada;
+        padding: 5px;
+    }
+    .time_rec1 {
+        height: 23px;
+        color: #ffffff;
+        font-family: "Rubik";
+        font-size: 15px;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+    .treb_h1 {
+        color: #000000;
+        font-family: "Rubik";
+        font-size: 18px;
+        width: 97%;
+        font-weight: 400;
+        text-transform: uppercase;
+        padding: 50px 0 25px 0;
+        margin-left: 35px;
+    }
+    .box1 {
+        margin-bottom: 0;
+        width: 290px;
+        margin: auto;
+        padding: 10px 0 10px 0;
+    }
+    .calc_bl1 {
+        display: flex;
+        margin: auto;
+        width: 100%;
+    }
+    .fastCreditDiv {
+        width: 100%;
+        border-radius: 50px;
+        background: #fa338b;
+        height: 3px;
+        top: 1px;
+        display: flex;
+        position: relative;
+        margin: auto;
+        align-items: center;
+    }
+    .itms {
+        width: 100%;
+        margin: auto;
+        top: 150px;
+        margin-bottom: 140px;
+        position: relative;
+    }   
+    .main_part_top_summ_numb {
+        display: flex;
+        color: #6a55b4;
+        font-size: 16px;
+        font-family: "Rubik";
+    }
+    .main_part_top_prozents_txt {
+        width: 100%;
+        color: #000000;
+        font-family: "Rubik";
+        font-size: 13px;
+        font-weight: 300;
+        margin-bottom: 18px;
+    }
+    .last_block_proz_txt {
+        color: #ffffff;
+        font-size: 17px;
+        height: auto;
+        margin: auto;
+        font-family: "Rubik";
+    }
+    .calc_bl {
+        margin-bottom: 30px;
+        width: 100%;
+    }    
   }
