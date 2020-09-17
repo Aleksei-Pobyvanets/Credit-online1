@@ -210,11 +210,9 @@ slider.init({
 });
 
 	formReg = document.getElementById("formReg")
-
 	formReg.addEventListener('submit', (e) => {
 		e.preventDefault();
 		var hr = new XMLHttpRequest();
-		// Create some variables we need to send to our PHP file
 		var url = "/send.php";
 		var summSl = document.getElementById("summSl").value;
 		var timeSl = document.getElementById("timeSl").value;
@@ -226,7 +224,6 @@ slider.init({
 		console.log(vars)
 		hr.open("POST", url, true);
 		hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-		// Access the onreadystatechange event for the XMLHttpRequest object
 		hr.onreadystatechange = function() {
 			console.log(hr);
 
@@ -235,9 +232,8 @@ slider.init({
 				document.getElementById("status").innerHTML = return_data;
 			}
 		}
-		// Send the data to PHP now... and wait for response to update the status div
 
-		hr.send(vars); // Actually execute the request
+		hr.send(vars);
 		document.getElementById("status").innerHTML = "processing...";
 
 	})

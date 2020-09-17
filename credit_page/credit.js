@@ -411,3 +411,28 @@ function renderCreditItems(props) {
 	creditItems.innerHTML = templeit
 }
 renderCreditItems({data : mockData});
+
+	formReg = document.getElementById("formReg")
+	formReg.addEventListener('submit', (e) => {
+		e.preventDefault();
+		var hr = new XMLHttpRequest();
+		var url = "/send.php";
+		var summSl = document.getElementById("summSl").value;
+		var timeSl = document.getElementById("timeSl").value;
+		var vars ="&summSl="+summSl+"&timeSl="+timeSl;
+		console.log(vars)
+		hr.open("POST", url, true);
+		hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		hr.onreadystatechange = function() {
+			console.log(hr);
+
+			if(hr.readyState == 4 && hr.status == 200) {
+				var return_data = hr.responseText;
+				document.getElementById("status").innerHTML = return_data;
+			}
+		}
+
+		hr.send(vars);
+		document.getElementById("status").innerHTML = "processing...";
+
+	})
