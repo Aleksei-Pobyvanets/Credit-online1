@@ -280,9 +280,9 @@ function renderTemplaite(props) {
 					<p class="last_block_txt">на первый кредит</p>
 				</div>
 			</div>
-			<div class="bnt">
+			<button class="bnt">
 				<p class='bnt_txt'>получить кредит</p>
-			</div>
+			</button>
 		</div>
 	</div>
 
