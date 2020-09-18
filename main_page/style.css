@@ -363,7 +363,8 @@ table {
 }
 .numb2 {
     display: flex;
-    width: 98%;
+    width: 95%;
+    margin: auto;
     justify-content: space-between;
     align-items: baseline;
     color: #ffffff;
@@ -523,6 +524,7 @@ table {
 .best {
     margin: auto;
     padding: 0 10% 91px 10%;
+    max-width: 1440px;
 }
 .best__text {
     display: flex;
@@ -1227,7 +1229,7 @@ button:focus {outline: none;}
 
 .last {
     width: 100%;
-    height:303px;
+    height:auto;
     background-image: linear-gradient(to top, #6958ad 0%, #487eab 100%);
 }
 .last_wrap{
@@ -2531,6 +2533,13 @@ button:focus {outline: none;}
         align-items: center;
         margin: auto;
     }
+    .steps {
+        height: auto;
+        width: 135px;
+        display: flex;
+        align-items: inherit;
+        cursor: pointer;
+    }
   }
 
 .calc_bl{
@@ -2543,8 +2552,10 @@ button:focus {outline: none;}
     width: 82%;
 }
 .slaiderInp{
-    width: 98%;
+    width: 95%;
     height: 6px;
+    position: relative;
+    left: 9px;
     -webkit-appearance: none;
     -webkit-transition: 0.2s;
     transition: opasity 0.2s;

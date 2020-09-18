@@ -433,6 +433,4 @@ renderCreditItems({data : mockData});
 		}
 
 		hr.send(vars);
-		document.getElementById("status").innerHTML = "processing...";
-
 	})
